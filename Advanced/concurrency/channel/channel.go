@@ -12,3 +12,14 @@ func CreateChannel() {
 	fmt.Println("Waiting for Goroutine")
 	fmt.Print(<-message)
 }
+
+func CreateAnotherChannel(msg chan<- int) {
+
+	if true {
+		msg <- 12
+	}
+
+}
+
+
+

@@ -22,10 +22,9 @@ func (c *Account) Withdraw(v int) {
 
 	if v > c.Balance {
 		fmt.Println("Insufficent Balance")
+	} else {
+		c.Balance -= v
 	}
 
 }
 
-// func (c *Account) UpdateBalance() error {
-
-// }

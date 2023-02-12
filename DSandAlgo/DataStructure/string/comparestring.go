@@ -1,4 +1,4 @@
-package main
+package string
 
 import (
 	"fmt"
@@ -12,5 +12,7 @@ func main() {
 
 	fmt.Println(strings.Compare(name1, "Surya Prakash"))
 	fmt.Println(strings.Compare(name2, "Surya Prakash"))
+
+	StrToByteConversion()
 
 }

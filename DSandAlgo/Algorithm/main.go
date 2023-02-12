@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	search "test.com/DSandAlgo/Algorithm/Search"
+	search "gotutorial.com/DSandAlgo/Algorithm/Search"
 )
 
 func main() {
