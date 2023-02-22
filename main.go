@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gotutorial.com/DSandAlgo/DataStructure/bst"
+	"gotutorial.com/DSandAlgo/DataStructure/stack"
 )
 
 func main() {
-	bst.BST()
+	stack.CallStack()
 
 }

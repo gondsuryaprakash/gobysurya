@@ -1,4 +1,4 @@
-package main
+package math
 
 func SumOfNumber(n int) int {
 	var sum int

@@ -1,21 +1,36 @@
 package main
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
-	router := gin.Default()
+type Person struct {
+	Name string `json:"name"`
+	Age  int    `json:"age"`
+}
 
-	router.GET("/", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, gin.H{"message": "Pong", "status": "Success"})
+func main() {
+
+	r := gin.Default()
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "Pong",
+		})
+
 	})
 
+	r.POST("/create", func(ctx *gin.Context) {
+		var person *Person
+		err := ctx.BindJSON(&person)
+		if err == nil {
+			ctx.AbortWithStatus(500)
+		}
 
-    
+		ctx.JSON(200, gin.H{
+			"model": person,
+		})
+	})
 
-	router.Run(":3000")
-
+	// Start the Server
+	r.Run()
 }

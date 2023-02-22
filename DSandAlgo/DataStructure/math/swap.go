@@ -1,4 +1,4 @@
-package main
+package math
 
 func SwapNumber(a, b int) (int, int) {
 	a = a - b

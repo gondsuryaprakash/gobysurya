@@ -32,28 +32,20 @@ func CustomSorting() {
 
 	persons := []Person{
 		{
-			Name: "Sai",
+			Name: "ABC",
 			Age:  27,
 		},
 		{
-			Name: "Surya",
+			Name: "BCA",
 			Age:  28,
 		},
 		{
-			Name: "Ritesh",
+			Name: "CAB",
 			Age:  27,
 		},
 		{
-			Name: "Keerthi",
+			Name: "DAC",
 			Age:  29,
-		},
-		{
-			Name: "Subhashish",
-			Age:  28,
-		},
-		{
-			Name: "Santosh",
-			Age:  32,
 		},
 	}
 

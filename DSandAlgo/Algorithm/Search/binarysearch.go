@@ -1,14 +1,25 @@
 package search
 
-// func BinarySearch(low, high,key  int, array []int) bool {
+import (
+	"errors"
+	"sort"
+)
 
-// 	for low <= high {
+func BinarySearch(key, low, high int, arr []int) (index int, err error) {
 
-// 		mid := (low + high )/2
+	// Sort the array
+	sort.Ints(arr)
+	if low > high {
+		return -1, errors.New("Key is not Present in Arr")
+	}
+	mid := low + (high-low)/2
+	if arr[mid] == key {
+		return mid, nil
+	}
+	if arr[mid] > key { // Element present in right side
+		return BinarySearch(key, low, mid-1, arr)
+	} else {
+		return BinarySearch(key, mid+1, high, arr)
+	}
 
-// 		if array[mid] == key {
-// 			return true
-// 		} else if array[mid] < k{}
-
-// 	}
-// }
+}
