@@ -1,10 +1,9 @@
 package main
 
 import (
-	"gotutorial.com/DSandAlgo/DataStructure/stack"
+	"gotutorial.com/DSandAlgo/DataStructure/array"
 )
 
 func main() {
-	stack.CallStack()
-
+	array.MoveAllZeroAtEnd()
 }
