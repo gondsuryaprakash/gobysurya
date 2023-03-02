@@ -1,9 +1,13 @@
 package main
 
 import (
-	"gotutorial.com/DSandAlgo/DataStructure/array"
+	"fmt"
+
+	"gotutorial.com/DSandAlgo/Algorithm/sort"
 )
 
 func main() {
-	array.MoveAllZeroAtEnd()
+	arr := []int{64, 25, 12, 22, 11}
+	arr1 := sort.BubbleSort(arr)
+	fmt.Println(arr1)
 }
