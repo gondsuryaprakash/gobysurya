@@ -7,7 +7,7 @@
 
 | No. | Questions                                                                                                                                                                                                                        |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | **Basic  Golang**                                                                                                                                                                                                                   |
+|     | [**Basic  Golang**                                                                                                                                                                                                                |
 | 1   | [What is Golang?](#what-is-Golang)                                                                                                                                                                                                 |
 | 2   | [What are the major features of Golang?](#what-are-the-major-features-of-Golang)                                                                                                                                                   |
 | 3   | [Is Golang an interpreter or compiler?](#Is-Golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
@@ -15,7 +15,6 @@
 | 5   | [What is runtime in Golang?](#What-is-runtime-in-Golang)      
 | 6   | [What is $GOPATH? ](#What-is-$GOPATH)        
 | 7   | [What is src pkg and bin in Golang ?](#What-is-src-pkg-and-bin-in-Golang-?)   |
-|     |              |
 |     | **Goroutine and Channels**|
 | 1   | [What is Concurrency?](#What-is-Concurrency)
 
@@ -27,7 +26,7 @@
 
     Go is a statically typed, compiled high-level programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.  <div>Source : <a src="https://en.wikipedia.org/wiki/Go_(programming_language)">Wiki</a></div>
 
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 2.  ### What are the major features of Golang?
 
@@ -51,12 +50,12 @@
     - **Open Source**: Golang is an open-source language, which means that the source code is freely available and can be modified and distributed by anyone.
 
     
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 3.  ### Is Golang an interpreter or compiler?
     Go, is a compiled language. This means that Go source code is compiled into machine code before it is executed, resulting in faster execution times compared to interpreted languages.
     
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 4.  ### What is Garbage Collector in Golang?
 
@@ -68,7 +67,7 @@
      
     The Golang GC is designed to minimize pauses and to work efficiently in a concurrent environment, where multiple Goroutines (concurrent execution threads) may be allocating and deallocating memory simultaneously. Overall, the Garbage Collector in Golang helps to simplify memory management and reduces the risk of memory leaks or other memory-related issues in programs.   
 
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 5. ### What is runtime in Golang ? 
 
@@ -87,7 +86,7 @@
 
     Overall, the Golang Runtime provides a robust and efficient infrastructure that allows programs to run smoothly and efficiently, while minimizing the need for manual intervention or management by the programmer.
 
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 6. ### What is $GOPATH ? 
     
@@ -95,11 +94,11 @@
 
     The GOPATH environment variable is used by the Go toolchain to locate and manage Go packages and their dependencies. When the Go compiler and related tools are invoked, they search for packages and libraries in the directories specified in GOPATH.
 
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
 
 7. ### What is src pkg and bin in Golang ? 
     
-    **[Back to Top](#Basic-Golang)**
+    **[Back to Top](#Table-of-Contents)**
           
 
 
@@ -112,6 +111,6 @@
     Channels provide a way for goroutines to communicate with each other and share data. A channel is a typed conduit through which values can be passed between goroutines. Channels can be used to synchronize the execution of goroutines, allowing them to coordinate their work and avoid race conditions.
     In Golang, concurrency is an important concept that allows developers to write highly efficient and scalable programs. By leveraging goroutines and channels, Golang programs can easily handle many simultaneous tasks and make the most of modern multicore processors.
 
-    **[Back to Top](#Goroutine-andChannels)**
+   **[Back to Top](#Table-of-Contents)**
 
 
