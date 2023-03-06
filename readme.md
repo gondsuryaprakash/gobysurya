@@ -17,6 +17,7 @@
 | 7   | [What is src pkg and bin in Golang ?](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
 | 1   | [What is Concurrency?](#What-is-Concurrency)
+|2    | [What is channel ?](#What-is-channel-?)
 
  
 
@@ -113,15 +114,92 @@
 
    **[Back to Top](#Table-of-Contents)**
 
-   2. ### What is difference between Concurrency and Parallelism ?
+2. ### What is difference between Concurrency and Parallelism ?
 
 
-| Concurrency  |  Paralalism |
-| ------------- | ------------- |
-| Refers to the ability of a program to manage multiple tasks simultaneously, with each task running independently and concurrently.  | Refers to the ability of a program to execute multiple tasks simultaneously, using multiple processors or cores.  |
-| Allows a program to switch between different tasks as needed, and to make progress on multiple tasks simultaneously.  | Allows a program to make the most of modern hardware, by running tasks in parallel and completing them more quickly. |
-|Does not necessarily require multiple processors or cores; it can be achieved on a single processor through time-slicing or other techniques. |Requires multiple processors or cores to be effective.|
-|Can be used to create highly efficient and scalable programs.|Can be used to make the most of modern hardware and achieve high levels of performance.|
+    | Concurrency  |  Paralalism |
+    | ------------- | ------------- |
+    | Refers to the ability of a program to manage multiple tasks simultaneously, with each task running independently and concurrently.  | Refers to the ability of a program to execute multiple tasks simultaneously, using multiple processors or cores.  |
+    | Allows a program to switch between different tasks as needed, and to make progress on multiple tasks simultaneously.  | Allows a program to make the most of modern hardware, by running tasks in parallel and completing them more quickly. |
+    |Does not necessarily require multiple processors or cores; it can be achieved on a single processor through time-slicing or other techniques. |Requires multiple processors or cores to be effective.|
+    |Can be used to create highly efficient and scalable programs.|Can be used to make the most of modern hardware and achieve high levels of performance.| 
+
+    **[Back to Top](#Table-of-Contents)**
+
+3. ### What is channel ? 
+    A channel is a typed conduit through which values can be passed between `goroutines`. A channel provides a way for goroutines to communicate and synchronize their execution, allowing them to coordinate their work and share data.
+
+    Channels can be created using the `make` function, with a type that specifies the type of values that can be passed through the channel. For example, the following code creates a channel of integers:
+
+    ```go
+       ch:= make(chan int)
+    ```
+
+    **[Back to Top](#Table-of-Contents)**
+
+    #### Buffered Channel 
+    - A buffered channel is asynchronous, meaning that the sender and receiver goroutines are not synchronized and send operations will not block as long as there is space in the buffer, but block once the buffer is full.
+    - Buffered channels are typically used for many-to-one or many-to-many communication between goroutines, where multiple goroutines can send data to a single receiver without blocking.
+    - Here's an example of using a buffered channel to implement a simple message queue:
+
+    ```go 
+    func main() {
+    queue := make(chan string, 3) // buffer size of 3
+
+    // Start a goroutine to process messages from the queue
+    go func() {
+        for {
+            msg := <-queue // receive a message from the queue
+            fmt.Println("Processing message:", msg)
+            time.Sleep(time.Second) // simulate processing time
+        }
+    }()
+
+    // Send some messages to the queue
+    queue <- "Message 1"
+    queue <- "Message 2"
+    queue <- "Message 3"
+    queue <- "Message 4" // blocks until a message is processed and space is freed up
+
+    fmt.Println("All messages sent")
+    }  
+    ```
+
+
+     #### UnBuffered Channel
+    - An unbuffered channel is synchronous, meaning that the sender and receiver goroutines are synchronized and each send operation will block until there is a corresponding receive operation, and vice versa.
+    - Unbuffered channels are typically used for one-to-one communication between goroutines, where one goroutine needs to wait for another goroutine to complete a specific task before continuing.
+    - Here's an example of using an unbuffered channel for communication between two goroutines:
+
+    ```go
+
+    func worker(id int, jobs <-chan int, results chan<- int) {
+        for j := range jobs {
+            fmt.Printf("Worker %d started job %d\n", id, j)
+            time.Sleep(time.Second) // simulate doing work
+            fmt.Printf("Worker %d finished job %d\n", id, j)
+            results <- j * 2
+            } 
+        }
+
+    func main() {
+        jobs := make(chan int)
+        results := make(chan int)
+
+        // Start some worker goroutines
+        for w := 1; w <= 3; w++ {
+            go worker(w, jobs, results)
+        }
+
+        // Send some jobs to the workers and collect the results
+        for j := 1; j <= 5; j++ {
+            jobs <- j
+            result := <-results
+            fmt.Printf("Result for job %d: %d\n", j, result)
+        }
+    }
+
+    ```
   
   
    
