@@ -17,7 +17,7 @@
 | 7   | [What is src pkg and bin in Golang ?](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
 | 1   | [What is Concurrency?](#What-is-Concurrency)
-|2    | [What is channel ?](#What-is-channel-?)
+|2    | [What is channel ?](#What-is-channel?)
 
  
 
@@ -134,9 +134,7 @@
     ```go
        ch:= make(chan int)
     ```
-
-    **[Back to Top](#Table-of-Contents)**
-
+    There are two types of channel - 
     #### Buffered Channel 
     - A buffered channel is asynchronous, meaning that the sender and receiver goroutines are not synchronized and send operations will not block as long as there is space in the buffer, but block once the buffer is full.
     - Buffered channels are typically used for many-to-one or many-to-many communication between goroutines, where multiple goroutines can send data to a single receiver without blocking.
