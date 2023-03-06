@@ -3,11 +3,12 @@ package main
 import (
 	"fmt"
 
-	"gotutorial.com/DSandAlgo/Algorithm/sort"
+	"gotutorial.com/DSandAlgo/Algorithm/maths"
 )
 
 func main() {
-	arr := []int{64, 25, 12, 22, 11}
-	arr1 := sort.BubbleSort(arr)
-	fmt.Println(arr1)
+
+	ok := maths.SumOfNumber(134)
+
+	fmt.Println(ok)
 }
