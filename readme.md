@@ -19,6 +19,7 @@
 | 1   | [What is Concurrency?](#What-is-Concurrency)|
 | 2   | [What is difference between Concurrency and Parallelism?](#What-is-difference-between-Concurrency-and-Parallelism)|
 | 3   | [What is channel ?](#What-is-channel)|
+| 4   | [What is Fan In and Fan Out Design Pattern?](#What-is-Fan-In-and-Fan-Out-Design-Pattern?)
 
  
 
@@ -131,7 +132,7 @@
     A channel is a typed conduit through which values can be passed between `goroutines`. A channel provides a way for goroutines to communicate and synchronize their execution, allowing them to coordinate their work and share data.
 
     Channels can be created using the `make` function, with a type that specifies the type of values that can be passed through the channel. For example, the following code creates a channel of integers:
-
+ 
     ```go
        ch:= make(chan int)
     ```
@@ -202,5 +203,81 @@
   
   
    
+4. ### What is Fan In and Fan Out Design Pattern? 
+
+    #### Fan-in
+    
+    - `Fan-In` is a pattern where multiple goroutines send data to a single channel, which collects and combines the   data from all the goroutines.
+    - This pattern is useful when you have multiple goroutines producing similar results that need to be processed together, such as reading data from multiple files or querying multiple APIs for data.
+    - Here's an example of using the "Fan-In" pattern to read data from multiple files: 
+
+    ```go
+    func readFile(filename string, out chan<- string) {
+        data, err := ioutil.ReadFile(filename)
+            if err != nil {
+                log.Fatal(err)
+            }
+        out <- string(data)
+    }
+
+    func main() {
+        files := []string{"file1.txt", "file2.txt", "file3.txt"}
+
+        // Create a channel to collect the data from the goroutines
+        out := make(chan string)
+        // Start a goroutine for each file to read the data and send it to the output channel
+        for _, file := range files {
+            go readFile(file, out)
+        }
+
+        // Collect the data from the output channel
+        for i := 0; i < len(files); i++ {
+            data := <-out
+            fmt.Println(data)
+        }
+    }
+
+    ```
+
+    In this example, the readFile function is a worker function that reads the contents of a file and sends it to the out channel. The main function creates an output channel and starts a goroutine for each file to read the data and send it to the output channel. The main function then collects the data from the output channel and prints it to the console.
+
+    #### Fan-Out
+
+    - `Fan-Out` is a pattern where a single goroutine sends work to multiple worker goroutines, which each process the work and send the results to a single channel that collects the results.
+    - This pattern is useful when you have a large amount of work that needs to be processed in parallel, such as processing data in batches or querying a large dataset.
+    - Here's an example of using the "Fan-Out" pattern to process data in parallel:
+    
+    ```go
+    func process(data []int, out chan<- int) {
+        for _, num := range data {
+            out <- num * 2
+       }
+    }
+
+    func main() {
+        data := []int{1, 2, 3, 4, 5}
+
+        // Create an output channel to collect the results from the workers
+        out := make(chan int)
+
+        // Start some worker goroutines to process the data and send the results to the output channel
+        for i := 0; i < 3; i++ {
+            go process(data, out)
+        }
+
+        // Collect the results from the output channel
+        results := make([]int, 0, len(data)*3)
+        for i := 0; i < len(data)*3; i++ {
+            result := <-out
+            results = append(results, result)
+        }
+
+        fmt.Println(results)
+    }
 
 
+
+    ```
+    
+    In this example, the process function is a worker function that processes a slice of integers and sends the results to the out channel. The main function creates an output channel and starts multiple worker goroutines to process the data and send the results to the output channel. The main function then collects the results from the output channel and stores them in a slice. The results are then printed to the console.
+   
