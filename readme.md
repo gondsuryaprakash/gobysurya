@@ -113,4 +113,17 @@
 
    **[Back to Top](#Table-of-Contents)**
 
+   2. ### What is difference between Concurrency and Parallelism ?
+
+
+| Concurrency  |  Paralalism |
+| ------------- | ------------- |
+| Refers to the ability of a program to manage multiple tasks simultaneously, with each task running independently and concurrently.  | Refers to the ability of a program to execute multiple tasks simultaneously, using multiple processors or cores.  |
+| Allows a program to switch between different tasks as needed, and to make progress on multiple tasks simultaneously.  | Allows a program to make the most of modern hardware, by running tasks in parallel and completing them more quickly. |
+|Does not necessarily require multiple processors or cores; it can be achieved on a single processor through time-slicing or other techniques. |Requires multiple processors or cores to be effective.|
+|Can be used to create highly efficient and scalable programs.|Can be used to make the most of modern hardware and achieve high levels of performance.|
+  
+  
+   
+
 
