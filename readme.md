@@ -16,9 +16,9 @@
 | 6   | [What is $GOPATH? ](#What-is-$GOPATH)        
 | 7   | [What is src pkg and bin in Golang ?](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
-| 1   | [What is Concurrency?](#What-is-Concurrency)
-| 2   | [What is difference between Concurrency and Parallelism? ](#What-is-difference-between-Concurrency-and-Parallelism)
-| 3   | [What is channel ?](#What-is-channel?)
+| 1   | [What is Concurrency?](#What-is-Concurrency)|
+| 2   | [What is difference between Concurrency and Parallelism? ](#What-is-difference-between-Concurrency-and-Parallelism)|
+| 3   | [What is channel ?](#What-is-channel)|
 
  
 
