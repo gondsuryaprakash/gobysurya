@@ -9,17 +9,18 @@
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |     | [**Basic  Golang**                                                                                                                                                                                                                |
 | 1   | [What is Golang?](#what-is-Golang)                                                                                                                                                                                                 |
-| 2   | [What are the major features of Golang?](#what-are-the-major-features-of-Golang)                                                                                                                                                   |
-| 3   | [Is Golang an interpreter or compiler?](#Is-Golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
-| 4   | [What is Garbage Collector in Golang?](#What-is-Garbage-Collector-in-Golang)                                                                                                                
-| 5   | [What is runtime in Golang?](#What-is-runtime-in-Golang)      
-| 6   | [What is $GOPATH? ](#What-is-$GOPATH)        
-| 7   | [What is src pkg and bin in Golang ?](#What-is-src-pkg-and-bin-in-Golang-?)   |
+| 2   | [What are the major features of Golang](#what-are-the-major-features-of-Golang)                                                                                                                                                   |
+| 3   | [Is Golang an interpreter or compiler](#Is-Golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
+| 4   | [What is Garbage Collector in Golang](#What-is-Garbage-Collector-in-Golang)                                                                                                                
+| 5   | [What is runtime in Golang](#What-is-runtime-in-Golang)      
+| 6   | [What is $GOPATH](#What-is-$GOPATH)        
+| 7   | [What is src pkg and bin in Golang](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
-| 1   | [What is Concurrency?](#What-is-Concurrency)|
-| 2   | [What is difference between Concurrency and Parallelism?](#What-is-difference-between-Concurrency-and-Parallelism)|
-| 3   | [What is channel ?](#What-is-channel)|
-| 4   | [What is Fan In and Fan Out Design Pattern?](#What-is-Fan-In-and-Fan-Out-Design-Pattern?)
+| 1   | [What is Concurrency](#What-is-Concurrency)|
+| 2   | [What is difference between Concurrency and Parallelism](#What-is-difference-between-Concurrency-and-Parallelism)|
+| 3   | [What is channel](#What-is-channel)|
+| 4   | [What is Fan In and Fan Out Design Pattern](#What-is-Fan-In-and-Fan-Out-Design-Pattern?)|
+| 5   | [What is worker pool design?](#What-is-worker-pool-design)|
 
  
 
@@ -281,3 +282,67 @@
     
     In this example, the process function is a worker function that processes a slice of integers and sends the results to the out channel. The main function creates an output channel and starts multiple worker goroutines to process the data and send the results to the output channel. The main function then collects the results from the output channel and stores them in a slice. The results are then printed to the console.
    
+5. ### What is worker pool design ? 
+    The worker pool pattern is a popular concurrency design pattern used in Go (Golang) for efficient and concurrent processing of tasks. It involves creating a pool of goroutines (workers) that can pick up tasks from a queue and process them concurrently.
+
+    Here are some key points of the worker pool pattern in Go:
+
+    - A fixed number of worker goroutines are created upfront.
+    - Each worker goroutine waits for tasks to be submitted to a task channel.
+    - When a task is submitted, an idle worker picks it up and processes it.
+    - Once a task is completed, the worker returns to the idle state and waits for another task.
+    - The task channel can be buffered to allow for a certain number of tasks to be queued up before blocking.
+    - The number of workers and buffer size can be tuned to optimize performance for the specific workload.
+    
+    Here is an example implementation of the worker pool pattern in Go:
+
+    ```go
+
+    package main
+
+    import (
+        "fmt"
+        "sync"
+    )
+
+    func worker(id int, jobs <-chan int, results chan<- int) {
+        for j := range jobs {
+            fmt.Println("worker", id, "started  job", j)
+            results <- j * 2
+            fmt.Println("worker", id, "finished job", j)
+        }
+    }
+ 
+    func main() {
+        const numJobs = 10
+        const numWorkers = 3
+
+        jobs := make(chan int, numJobs)
+        results := make(chan int, numJobs)
+
+        // Spawn a fixed number of worker goroutines.
+        var wg sync.WaitGroup
+        for i := 1; i <= numWorkers; i++ {
+            wg.Add(1)
+            go func(id int) {
+                defer wg.Done()
+                worker(id, jobs, results)
+        }(i)
+        }
+
+        // Submit tasks to the task channel.
+        for j := 1; j <= numJobs; j++ {
+            jobs <- j
+        }
+        close(jobs)
+
+        // Collect the results from the result channel.
+        for a := 1; a <= numJobs; a++ {
+            <-results
+        }
+
+        // Wait for all workers to complete.
+        wg.Wait()
+    }
+
+    ```
