@@ -1,38 +1,37 @@
 # Golang Interview Questions & Answers
 
-> This is Golang Interview Questions from Beginer to High level 
-
+> This is Golang Interview Questions from Beginer to High level
 
 ### Table of Contents
 
 | No. | Questions                                                                                                                                                                                                                        |
 | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|     | [**Basic  Golang**                                                                                                                                                                                                                |
-| 1   | [What is Golang?](#what-is-Golang)                                                                                                                                                                                                 |
-| 2   | [What are the major features of Golang](#what-are-the-major-features-of-Golang)                                                                                                                                                   |
-| 3   | [Is Golang an interpreter or compiler](#Is-Golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
-| 4   | [What is Garbage Collector in Golang](#What-is-Garbage-Collector-in-Golang)                                                                                                                
-| 5   | [What is runtime in Golang](#What-is-runtime-in-Golang)      
-| 6   | [What is $GOPATH](#What-is-$GOPATH)        
+|     | **Basic  Golang**                                                                                                                                                                                                                |
+| 1   | [What is Golang?](#what-is-golang)                                                                                                                                                                                                 |
+| 2   | [What are the major features of Golang](#what-are-the-major-features-of-golang)                                                                                                                                                   |
+| 3   | [Is Golang an interpreter or compiler](#is-golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
+| 4   | [What is Garbage Collector in Golang](#what-is-garbage-collector-in-golang)
+                                                                                |
+| 5   | [What is runtime in Golang](#what-is-runtime-in-golang) |
+| 6   | [What is $GOPATH](#What-is-$GOPATH)
+  |
 | 7   | [What is src pkg and bin in Golang](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
-| 1   | [What is Concurrency](#What-is-Concurrency)|
+| 1   | [What is Concurrency](#what-is-concurrency)|
 | 2   | [What is difference between Concurrency and Parallelism](#What-is-difference-between-Concurrency-and-Parallelism)|
 | 3   | [What is channel](#What-is-channel)|
 | 4   | [What is Fan In and Fan Out Design Pattern](#What-is-Fan-In-and-Fan-Out-Design-Pattern?)|
 | 5   | [What is worker pool design?](#What-is-worker-pool-design)|
 
- 
-
 ## Basic Golang
 
-1.  ### What is Golang?
+1. ### What is Golang?
 
     Go is a statically typed, compiled high-level programming language designed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is syntactically similar to C, but with memory safety, garbage collection, structural typing, and CSP-style concurrency.  <div>Source : <a src="https://en.wikipedia.org/wiki/Go_(programming_language)">Wiki</a></div>
 
-    **[Back to Top](#Table-of-Contents)**
+    **[Back to Top](#table-of-contents)**
 
-2.  ### What are the major features of Golang?
+2. ### What are the major features of Golang?
 
     The major features of Golang are:
     - **Simplicity**: Golang was designed to be simple and easy to learn, making it a good language for beginners.
@@ -53,27 +52,27 @@
 
     - **Open Source**: Golang is an open-source language, which means that the source code is freely available and can be modified and distributed by anyone.
 
-    
-    **[Back to Top](#Table-of-Contents)**
+    **[Back to Top](#table-of-contents)**
 
-3.  ### Is Golang an interpreter or compiler?
+3. ### Is Golang an interpreter or compiler?
+
     Go, is a compiled language. This means that Go source code is compiled into machine code before it is executed, resulting in faster execution times compared to interpreted languages.
-    
-    **[Back to Top](#Table-of-Contents)**
 
-4.  ### What is Garbage Collector in Golang?
+    **[Back to Top](#table-of-contents)**
+
+4. ### What is Garbage Collector in Golang?
 
     Garbage Collector (GC) in Golang is a built-in automatic memory management system that automatically frees up memory that is no longer being used by the program.
 
     In Golang, memory is allocated dynamically using the new and make keywords. When a program creates new objects or variables, memory is allocated on the heap. However, once these objects are no longer needed, the memory they occupy can be released back to the system for reuse.
 
     The Golang Garbage Collector periodically scans the program's heap to identify objects that are no longer in use and can be safely removed. The GC works by identifying and marking active objects and then reclaiming memory occupied by objects that are no longer in use. This process is transparent to the program, which does not need to explicitly manage memory deallocation.
-     
-    The Golang GC is designed to minimize pauses and to work efficiently in a concurrent environment, where multiple Goroutines (concurrent execution threads) may be allocating and deallocating memory simultaneously. Overall, the Garbage Collector in Golang helps to simplify memory management and reduces the risk of memory leaks or other memory-related issues in programs.   
 
-    **[Back to Top](#Table-of-Contents)**
+    The Golang GC is designed to minimize pauses and to work efficiently in a concurrent environment, where multiple Goroutines (concurrent execution threads) may be allocating and deallocating memory simultaneously. Overall, the Garbage Collector in Golang helps to simplify memory management and reduces the risk of memory leaks or other memory-related issues in programs.
 
-5. ### What is runtime in Golang ? 
+    **[Back to Top](#table-of-contents)**
+
+5. ### What is runtime in Golang ?
 
     Runtime in Golang is a collection of libraries and services that provide low-level infrastructure and support for running and managing Go programs.
     The Golang Runtime includes a number of key components, such as:
@@ -90,60 +89,61 @@
 
     Overall, the Golang Runtime provides a robust and efficient infrastructure that allows programs to run smoothly and efficiently, while minimizing the need for manual intervention or management by the programmer.
 
-    **[Back to Top](#Table-of-Contents)**
+    **[Back to Top](#table-of-contents)**
 
-6. ### What is $GOPATH ? 
-    
+6. ### What is $GOPATH ?
+
     GOPATH is an environment variable in Golang that specifies the root directory of the Go workspace. The Go workspace is a directory hierarchy that contains Go source code files, libraries, and executables.
 
     The GOPATH environment variable is used by the Go toolchain to locate and manage Go packages and their dependencies. When the Go compiler and related tools are invoked, they search for packages and libraries in the directories specified in GOPATH.
 
-    **[Back to Top](#Table-of-Contents)**
+    **[Back to Top](#table-of-contents)**
 
-7. ### What is src pkg and bin in Golang ? 
-    
-    **[Back to Top](#Table-of-Contents)**
-          
+7. ### What is src pkg and bin in Golang ?
 
-
+    **[Back to Top](#table-of-contents)**
 
 ## Goroutine and Channels
 
-1. ### What is Concurrency? 
+1. ### What is Concurrency?
+
     Concurrency in Golang refers to the ability of a program to perform multiple tasks simultaneously, with each task running independently and concurrently. Golang has built-in features to support concurrency, including goroutines and channels.
     A goroutine is a lightweight thread managed by the Go runtime. Goroutines allow developers to write concurrent code without having to manage threads directly. A program can create many thousands of goroutines, which can all run concurrently.
     Channels provide a way for goroutines to communicate with each other and share data. A channel is a typed conduit through which values can be passed between goroutines. Channels can be used to synchronize the execution of goroutines, allowing them to coordinate their work and avoid race conditions.
     In Golang, concurrency is an important concept that allows developers to write highly efficient and scalable programs. By leveraging goroutines and channels, Golang programs can easily handle many simultaneous tasks and make the most of modern multicore processors.
 
-   **[Back to Top](#Table-of-Contents)**
+   **[Back to Top](#table-of-contents)**
 
 2. ### What is difference between Concurrency and Parallelism ?
-
 
     | Concurrency  |  Paralalism |
     | ------------- | ------------- |
     | Refers to the ability of a program to manage multiple tasks simultaneously, with each task running independently and concurrently.  | Refers to the ability of a program to execute multiple tasks simultaneously, using multiple processors or cores.  |
     | Allows a program to switch between different tasks as needed, and to make progress on multiple tasks simultaneously.  | Allows a program to make the most of modern hardware, by running tasks in parallel and completing them more quickly. |
     |Does not necessarily require multiple processors or cores; it can be achieved on a single processor through time-slicing or other techniques. |Requires multiple processors or cores to be effective.|
-    |Can be used to create highly efficient and scalable programs.|Can be used to make the most of modern hardware and achieve high levels of performance.| 
+    |Can be used to create highly efficient and scalable programs.|Can be used to make the most of modern hardware and achieve high levels of performance.|
 
-    **[Back to Top](#Table-of-Contents)**
+    **[Back to Top](#table-of-contents)**
 
-3. ### What is channel ? 
+3. ### What is channel ?
+
     A channel is a typed conduit through which values can be passed between `goroutines`. A channel provides a way for goroutines to communicate and synchronize their execution, allowing them to coordinate their work and share data.
 
     Channels can be created using the `make` function, with a type that specifies the type of values that can be passed through the channel. For example, the following code creates a channel of integers:
- 
+
     ```go
        ch:= make(chan int)
     ```
-    There are two types of channel - 
-    #### Buffered Channel 
+
+    There are two types of channel -
+
+#### Buffered Channel
+
     - A buffered channel is asynchronous, meaning that the sender and receiver goroutines are not synchronized and send operations will not block as long as there is space in the buffer, but block once the buffer is full.
     - Buffered channels are typically used for many-to-one or many-to-many communication between goroutines, where multiple goroutines can send data to a single receiver without blocking.
     - Here's an example of using a buffered channel to implement a simple message queue:
 
-    ```go 
+    ```go
     func main() {
     queue := make(chan string, 3) // buffer size of 3
 
@@ -166,8 +166,8 @@
     }  
     ```
 
+#### UnBuffered Channel
 
-     #### UnBuffered Channel
     - An unbuffered channel is synchronous, meaning that the sender and receiver goroutines are synchronized and each send operation will block until there is a corresponding receive operation, and vice versa.
     - Unbuffered channels are typically used for one-to-one communication between goroutines, where one goroutine needs to wait for another goroutine to complete a specific task before continuing.
     - Here's an example of using an unbuffered channel for communication between two goroutines:
@@ -202,15 +202,13 @@
 
     ```
   
-  
-   
-4. ### What is Fan In and Fan Out Design Pattern? 
+4. ### What is Fan In and Fan Out Design Pattern?
 
-    #### Fan-in
-    
+#### Fan-in
+
     - `Fan-In` is a pattern where multiple goroutines send data to a single channel, which collects and combines the   data from all the goroutines.
     - This pattern is useful when you have multiple goroutines producing similar results that need to be processed together, such as reading data from multiple files or querying multiple APIs for data.
-    - Here's an example of using the "Fan-In" pattern to read data from multiple files: 
+    - Here's an example of using the "Fan-In" pattern to read data from multiple files:
 
     ```go
     func readFile(filename string, out chan<- string) {
@@ -242,12 +240,12 @@
 
     In this example, the readFile function is a worker function that reads the contents of a file and sends it to the out channel. The main function creates an output channel and starts a goroutine for each file to read the data and send it to the output channel. The main function then collects the data from the output channel and prints it to the console.
 
-    #### Fan-Out
+#### Fan-Out
 
     - `Fan-Out` is a pattern where a single goroutine sends work to multiple worker goroutines, which each process the work and send the results to a single channel that collects the results.
     - This pattern is useful when you have a large amount of work that needs to be processed in parallel, such as processing data in batches or querying a large dataset.
     - Here's an example of using the "Fan-Out" pattern to process data in parallel:
-    
+
     ```go
     func process(data []int, out chan<- int) {
         for _, num := range data {
@@ -279,10 +277,11 @@
 
 
     ```
-    
+
     In this example, the process function is a worker function that processes a slice of integers and sends the results to the out channel. The main function creates an output channel and starts multiple worker goroutines to process the data and send the results to the output channel. The main function then collects the results from the output channel and stores them in a slice. The results are then printed to the console.
-   
-5. ### What is worker pool design ? 
+
+5. ### What is worker pool design ?
+
     The worker pool pattern is a popular concurrency design pattern used in Go (Golang) for efficient and concurrent processing of tasks. It involves creating a pool of goroutines (workers) that can pick up tasks from a queue and process them concurrently.
 
     Here are some key points of the worker pool pattern in Go:
@@ -293,7 +292,7 @@
     - Once a task is completed, the worker returns to the idle state and waits for another task.
     - The task channel can be buffered to allow for a certain number of tasks to be queued up before blocking.
     - The number of workers and buffer size can be tuned to optimize performance for the specific workload.
-    
+
     Here is an example implementation of the worker pool pattern in Go:
 
     ```go

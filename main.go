@@ -3,12 +3,11 @@ package main
 import (
 	"fmt"
 
-	"gotutorial.com/DSandAlgo/DataStructure/array"
+	"gotutorial.com/CP/leetcode"
 )
 
 func main() {
-	arr := []int{12, 13, 1, 10, 34, 1}
-	third := array.FindThirdHighestNumber(arr)
-	fmt.Println(third)
-
+	arr := []string{"2", "1", "+", "3", "*"}
+	n := leetcode.EvalRPN(arr)
+	fmt.Println(n)
 }

@@ -1,5 +1,9 @@
 # Slice 
 
+
+ - A slice points to an underlying array and is internally represented by a slice header. 
+ - Unlike array, the size of a slice is flexible and can be changed.
+ - 
 ### Slice Passing as an argument : 
 
  1. Case 1 : Change in outer function 
