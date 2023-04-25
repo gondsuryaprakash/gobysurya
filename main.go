@@ -1,13 +1,10 @@
 package main
 
 import (
-	"fmt"
-
-	"gotutorial.com/CP/leetcode"
+	"gotutorial.com/Advanced/package/iopackage"
 )
 
 func main() {
-	arr := []string{"2", "1", "+", "3", "*"}
-	n := leetcode.EvalRPN(arr)
-	fmt.Println(n)
+	iopackage.Read()
+
 }

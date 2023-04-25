@@ -64,6 +64,6 @@ func EvalRPN(tokens []string) int {
 		}
 	}
 
-	
+	return cast.ToInt((*stack)[0])
 
 }
