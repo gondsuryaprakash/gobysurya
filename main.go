@@ -1,10 +1,10 @@
 package main
 
 import (
-	"gotutorial.com/Advanced/package/iopackage"
+	"gotutorial.com/Advanced/concurrency/concurrencypattern"
 )
 
 func main() {
-	iopackage.Read()
+	concurrencypattern.WrokerPool()
 
 }
