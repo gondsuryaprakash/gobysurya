@@ -1,10 +1,11 @@
 package main
 
 import (
-	"gotutorial.com/Advanced/concurrency/concurrencypattern"
+	"gotutorial.com/CP/leetcode"
 )
 
 func main() {
-	concurrencypattern.WrokerPool()
+	arr := []int{2, 5, 1, 3, 4, 7}
+	leetcode.Shuffle(arr, len(arr))
 
 }

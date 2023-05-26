@@ -2,6 +2,7 @@ package queue
 
 type Queue []int
 
+// Give the empty element in the queue
 func (q Queue) Empty() bool {
 	return len(q) == 0
 
