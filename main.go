@@ -1,11 +1,22 @@
 package main
 
 import (
-	"gotutorial.com/CP/leetcode"
+	"fmt"
+
+	"gotutorial.com/Advanced/crypt"
 )
 
 func main() {
-	arr := []int{2, 5, 1, 3, 4, 7}
-	leetcode.Shuffle(arr, len(arr))
-
+	input := "Hello Surya"
+	encryptedData, err := crypt.Encryption(input)
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Now decryption of the encoded value
+	fmt.Println("Encrypted Data : ", encryptedData)
+	decryptByte, err := crypt.Decription(encryptedData)
+	if err != nil {
+		fmt.Println("Err in Decription ")
+	}
+	fmt.Println("Decrypted Data :", string(decryptByte))
 }
