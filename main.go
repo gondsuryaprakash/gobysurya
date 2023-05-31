@@ -3,20 +3,12 @@ package main
 import (
 	"fmt"
 
-	"gotutorial.com/Advanced/crypt"
+	"gotutorial.com/CP/leetcode"
 )
 
 func main() {
-	input := "Hello Surya"
-	encryptedData, err := crypt.Encryption(input)
-	if err != nil {
-		fmt.Println(err)
-	}
-	// Now decryption of the encoded value
-	fmt.Println("Encrypted Data : ", encryptedData)
-	decryptByte, err := crypt.Decription(encryptedData)
-	if err != nil {
-		fmt.Println("Err in Decription ")
-	}
-	fmt.Println("Decrypted Data :", string(decryptByte))
+	rect := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	area := leetcode.ContainerWithMostWater(rect)
+
+	fmt.Println(area)
 }

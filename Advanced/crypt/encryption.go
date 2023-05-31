@@ -13,6 +13,20 @@ const (
 	iv  = "my16digitIvKey12"
 )
 
+/*
+    input := "Hello Surya"
+	encryptedData, err := crypt.Encryption(input)
+	if err != nil {
+		fmt.Println(err)
+	}
+	// Now decryption of the encoded value
+	fmt.Println("Encrypted Data : ", encryptedData)
+	decryptByte, err := crypt.Decription(encryptedData)
+	if err != nil {
+		fmt.Println("Err in Decription ")
+	}
+	fmt.Println("Decrypted Data :", string(decryptByte))
+*/
 func Encryption(plainText string) (encryptedStr string, err error) {
 	var plainTextBlock []byte
 	length := len(plainText)
