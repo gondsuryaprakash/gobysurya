@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	rect := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
-	area := leetcode.ContainerWithMostWater(rect)
+	// rect := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
+	area := leetcode.RemoveTrailingZero("0")
 
 	fmt.Println(area)
 }
