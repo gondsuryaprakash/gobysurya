@@ -1,21 +1,16 @@
 package main
 
 import (
-	"fmt"
-	"log"
-	"net/http"
 	_ "net/http/pprof"
 
-	"gotutorial.com/CP/leetcode"
+	"gotutorial.com/Advanced/regularexpression"
 )
 
 func main() {
-	// rect := []int{1, 8, 6, 2, 5, 4, 8, 3, 7}
-	go func() {
-		log.Println(http.ListenAndServe("localhost:6060", nil))
-	}()
 
-	area := leetcode.DetectCapitalUse("aLL")
+	// arr := []int{2, 2, 5, 10, 1, 2, 10, 5, 10, 10, 2}
+	// arr := []int{2, 3, 1, 1, 4}
 
-	fmt.Println(area)
+	regularexpression.IsMobile("ios")
+
 }

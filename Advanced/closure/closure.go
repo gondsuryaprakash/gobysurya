@@ -22,7 +22,7 @@ func Incrementor() func() int {
 
 // fibNocci of the number
 
-func FinociOfNumber() func() int {
+func FibnociOfNumber() func() int {
 	f1 := 0
 	f2 := 1
 	return func() int {
@@ -32,9 +32,7 @@ func FinociOfNumber() func() int {
 }
 
 func CallFibGen() {
-
-	fibGen := FinociOfNumber()
-
+	fibGen := FibnociOfNumber()
 	for i := 0; i < 10; i++ {
 		fmt.Println(fibGen())
 	}

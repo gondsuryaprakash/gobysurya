@@ -41,3 +41,8 @@ func CallMergeSort() {
 	arr := []int{12, 11, 13, 5, 6, 7}
 	MergeSort(arr)
 }
+
+
+func MergeSort1(arr []int)  {
+	
+}

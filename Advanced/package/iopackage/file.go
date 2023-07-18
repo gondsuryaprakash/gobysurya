@@ -1,32 +1,29 @@
 package iopackage
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"os"
-
-	"github.com/spf13/cast"
 )
 
 func Write() {
-	file, err := os.Create("file.text")
+	file, err := os.Create("surya.json")
 	if err != nil {
 		fmt.Println(err)
 	}
 	defer file.Close()
 
 	writer := io.Writer(file)
-	n, err := writer.Write([]byte("Hello Surya"))
-
-	if err != nil {
-		fmt.Println(n, err)
-	}
-
-	n, err = io.WriteString(writer, "!")
-	fmt.Println(n, err)
-
 	for i := 0; i < 10; i++ {
-		n, err := io.WriteString(writer, cast.ToString(i)+"\n")
+		m := make(map[string]string)
+		m["id"] = string(i)
+		m["name"] = string(i) + "_surya"
+		mByte, err := json.Marshal(m)
+		if err != nil {
+			fmt.Println(err)
+		}
+		n, err := writer.Write(mByte)
 		if err != nil {
 			fmt.Println(n, err)
 		}
@@ -34,6 +31,12 @@ func Write() {
 
 }
 
+func WriteJson() {
+
+	for i := 0; i < 10; i++ {
+
+	}
+}
 func Read() {
 
 	file, _ := os.Open("file.text")

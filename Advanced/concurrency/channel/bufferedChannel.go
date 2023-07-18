@@ -16,11 +16,4 @@ func NewChannel() {
 	fmt.Println(<-bufferedChannel)
 	fmt.Println(<-bufferedChannel)
 
-	// select {
-	// case message1 := <-bufferedChannel:
-	// 	fmt.Println(message1)
-	// case message2 := <-bufferedChannel:
-	// 	fmt.Println(message2)
-	// }
-
 }

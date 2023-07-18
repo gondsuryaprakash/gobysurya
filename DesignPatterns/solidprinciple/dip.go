@@ -1,5 +1,11 @@
 package solidprinciple
 
+/*
+Dependency Inversion : 
+High level class should not depend on low level classes instead both are depend upon abstraction 
+
+*/
+
 type Logger interface {
 	Log(message string) error
 }
