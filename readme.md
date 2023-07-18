@@ -10,11 +10,9 @@
 | 1   | [What is Golang?](#what-is-golang)                                                                                                                                                                                                 |
 | 2   | [What are the major features of Golang](#what-are-the-major-features-of-golang)                                                                                                                                                   |
 | 3   | [Is Golang an interpreter or compiler](#is-golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
-| 4   | [What is Garbage Collector in Golang](#what-is-garbage-collector-in-golang)
-                                                                                |
+| 4   | [What is Garbage Collector in Golang](#what-is-garbage-collector-in-golang) |
 | 5   | [What is runtime in Golang](#what-is-runtime-in-golang) |
-| 6   | [What is $GOPATH](#What-is-$GOPATH)
-  |
+| 6   | [What is $GOPATH](#What-is-$GOPATH)|
 | 7   | [What is src pkg and bin in Golang](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
 | 1   | [What is Concurrency](#what-is-concurrency)|
