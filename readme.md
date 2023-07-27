@@ -12,14 +12,14 @@
 | 3   | [Is Golang an interpreter or compiler](#is-golang-an-interpreter-or-compiler)                                                                                                                                                                                                    |
 | 4   | [What is Garbage Collector in Golang](#what-is-garbage-collector-in-golang) |
 | 5   | [What is runtime in Golang](#what-is-runtime-in-golang) |
-| 6   | [What is $GOPATH](#What-is-$GOPATH)|
+| 6   | [What is $GOPATH](#What-is-$GOPATH) |
 | 7   | [What is src pkg and bin in Golang](#What-is-src-pkg-and-bin-in-Golang-?)   |
 |     | **Goroutine and Channels**|
-| 1   | [What is Concurrency](#what-is-concurrency)|
-| 2   | [What is difference between Concurrency and Parallelism](#What-is-difference-between-Concurrency-and-Parallelism)|
-| 3   | [What is channel](#What-is-channel)|
-| 4   | [What is Fan In and Fan Out Design Pattern](#What-is-Fan-In-and-Fan-Out-Design-Pattern?)|
-| 5   | [What is worker pool design?](#What-is-worker-pool-design)|
+| 1   | [What is Concurrency](#what-is-concurrency) |
+| 2   | [What is difference between Concurrency and Parallelism](#What-is-difference-between-Concurrency-and-Parallelism) |
+| 3   | [What is channel](#What-is-channel) |
+| 4   | [What is Fan In and Fan Out Design Pattern](#What-is-Fan-In-and-Fan-Out-Design-Pattern?) |
+| 5   | [What is worker pool design?](#What-is-worker-pool-design) |
 
 ## Basic Golang
 
@@ -112,7 +112,7 @@
 
    **[Back to Top](#table-of-contents)**
 
-2. ### What is difference between Concurrency and Parallelism ?
+2. ### What is difference between Concurrency and Parallelism?
 
     | Concurrency  |  Paralalism |
     | ------------- | ------------- |
