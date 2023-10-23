@@ -24,7 +24,7 @@ func CombinationSum2(candidates []int, target int) [][]int {
 				nextStart += 1
 				sum = start + nextStart + lastIndex
 				if sum == target {
-					
+
 				}
 				if sum < target {
 					nextStart += 1

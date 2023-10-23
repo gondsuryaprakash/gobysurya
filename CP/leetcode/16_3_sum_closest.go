@@ -2,7 +2,7 @@ package leetcode
 
 import "sort"
 
-func threeSumClosest(nums []int, target int) int {
+func ThreeSumClosest(nums []int, target int) int {
 
 	// var closetSum int
 	sort.Ints(nums)
@@ -14,6 +14,7 @@ func threeSumClosest(nums []int, target int) int {
 		if sum == target {
 			return sum
 		} else if sum > target {
+			return 0
 
 		}
 
