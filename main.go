@@ -8,10 +8,9 @@ import (
 
 func main() {
 
-	// matrix := [][]int{{0, 1 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}}
+	x := 2.00000
+	n := 10
+	res := leetcode.MyPow(x, n)
 
-	num := leetcode.Generate(3)
-
-	fmt.Println(num)
-
+	fmt.Println(res)
 }
