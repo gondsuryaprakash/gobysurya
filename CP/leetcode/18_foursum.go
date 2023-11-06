@@ -3,6 +3,7 @@ package leetcode
 import (
 	"fmt"
 	"sort"
+	"strconv"
 )
 
 func FourSum(arr []int, target int) [][]int {
@@ -78,4 +79,39 @@ func FourSum2(arr []int, target int) [][]int {
 	}
 
 	return result
+}
+
+func FourSum3(nums []int, target int) [][]int {
+
+	//Sort the arrray
+	sort.Ints(nums)
+
+	// result array
+	res := [][]int{}
+
+	uniqueResultHash := make(map[string]struct{})
+
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums)-2; j++ {
+			k := j + 1
+			l := len(nums) - 1
+			for k < l {
+				if nums[i]+nums[j]+nums[k]+nums[l] == target {
+					uniqueKey := strconv.Itoa(nums[i]) + strconv.Itoa(nums[j]) + strconv.Itoa(nums[k]) + strconv.Itoa(nums[l])
+					if _, ok := uniqueResultHash[uniqueKey]; !ok {
+						res = append(res, []int{nums[i], nums[j], nums[k], nums[l]})
+						uniqueResultHash[uniqueKey] = struct{}{}
+					}
+					k++
+					l--
+				} else if nums[i]+nums[j]+nums[k]+nums[l] < target {
+					// in this case need to increase the k
+					k++
+				} else {
+					l--
+				}
+			}
+		}
+	}
+	return res
 }

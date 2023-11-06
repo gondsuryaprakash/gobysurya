@@ -37,3 +37,19 @@ func CallFibGen() {
 		fmt.Println(fibGen())
 	}
 }
+
+func MakeGreeter(greeter string) func(string) string {
+	return func(name string) string {
+		return greeter + ", " + name
+	}
+}
+
+func CallGreetClosure() {
+
+	helloGreeter := MakeGreeter("Hello")
+	namsteGreeter := MakeGreeter("Namaste")
+
+	fmt.Println(helloGreeter("Surya"))
+	fmt.Println(namsteGreeter("Surya"))
+
+}
