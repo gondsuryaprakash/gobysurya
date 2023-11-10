@@ -34,11 +34,9 @@ func CustomSorting() {
 		{
 			Name: "ABC",
 			Age:  27,
-		},
-		{
-			Name: "BCA",
-			Age:  28,
-		},
+		}, {Name: "BCA",
+			Age: 28},
+
 		{
 			Name: "CAB",
 			Age:  27,

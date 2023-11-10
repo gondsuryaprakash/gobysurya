@@ -7,12 +7,11 @@ type ListNode struct {
 
 func AddTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
-	
 	dump := &ListNode{}
 	tmp := dump
 
 	var carry int
-	for l1 != nil || l2 != nil  || carry > 0 {
+	for l1 != nil || l2 != nil || carry > 0 {
 		s := 0
 		if l1 != nil {
 			s += l1.Val
