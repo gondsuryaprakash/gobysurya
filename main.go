@@ -8,18 +8,13 @@ import (
 
 func main() {
 
-	// nums := []int{1, 3, 2, 3, 1}
-	// nums2 := []int{2, 4, 3, 5, 1}
+	// arr := [][]int{{10, 16}, {2, 8}, {1, 6}, {7, 12}}
+	// arr1 := [][]int{{1, 2}, {3, 4}, {5, 6}, {7, 8}}
+	arr2 := [][]int{{1, 2}, {1, 2}, {1, 2}}
 
-	// nums3 := []int{1, 0, -1, 0, -2, 2}
-	// nums4 := []int{2, 2, 2, 2}
-	// nums5 := []int{2, 2, 2, 2, 2}
+	// arr2 := [][]int{{1, 2}, {2, 3}, {3, 4}, {1, 3}}
+	outPut := leetcode.EraseOverlapIntervals(arr2)
 
-	// nums6 := []int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}
-
-	nums7 := []int{100, 4, 200, 1, 3, 2}
-	res := leetcode.LongestConsecutive(nums7)
-
-	fmt.Println("Res: ", res)
+	fmt.Println(outPut)
 
 }
