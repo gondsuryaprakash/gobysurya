@@ -116,3 +116,23 @@ func CallBufferedChannel() {
 	wg.Wait()
 
 }
+
+func Worker(i int, ch chan int) {
+	fmt.Println("Started Working ", i)
+	time.Sleep(time.Second * 2)
+	fmt.Println("End task ", i)
+
+
+	fmt.Printf("Cap %v , %v", cap(ch), i)
+
+
+}
+
+func CallWorker() {
+	bufferedChannel := make(chan int, 3)
+	for i := 0; i < 5; i++ {
+		go Worker(i, bufferedChannel)
+		bufferedChannel <- i
+	}
+	time.Sleep(time.Second * 7)
+}
