@@ -1,13 +1,7 @@
 package leetcode
 
-func MajorityElement(nums []int) []int {
+// func MajorityElement(nums []int) []int {
 
+// 	return nil
 
-	
-
-
-
-
-	return nil
-
-}
+// }
