@@ -41,3 +41,27 @@ func (d Dog) walk() {
 	fmt.Println("Dog run : ")
 
 }
+
+type Vehicles interface {
+	Run(name string) string
+	Break()
+}
+
+type Cars struct {
+	Id    int
+	Wheel int
+	Model int
+}
+
+func (c *Cars) Run(name string) string {
+	fmt.Println("running")
+	return "running"
+}
+
+func (c *Cars) Break() {
+	fmt.Println("Break Apply")
+}
+
+func NewCars() Vehicles {
+	return &Cars{}
+}
