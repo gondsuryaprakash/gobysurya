@@ -19,7 +19,17 @@ func main() {
 	// token := []int{91, 4, 75, 70, 66, 71, 91, 64, 37, 54}
 
 	// score := 20
-	nums := []int{6, 1, 3, 1, 1, 8, 9, 2}
-	result := leetcode.IsPossibleToSplit(nums)
+	// nums := []int{6, 1, 3, 1, 1, 8, 9, 2}
+	// apple := []int{2, 83, 62}
+
+	// order := "cba"
+	// s := "abcd"
+
+	order := "kqep"
+	s := "pekeq" 
+
+	// k := 3
+
+	result := leetcode.CustomSortString(order, s)
 	fmt.Println(result)
 }
