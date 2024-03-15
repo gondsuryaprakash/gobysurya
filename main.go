@@ -10,11 +10,11 @@ func main() {
 	//  data1 := [][]int{{1, 2}}
 	// data := [][]int{{1, 2, 4}, {3, 3, 1}}
 
-	// data1 := [][]int{{10}}
+	// data1 := [][]int{{-5}}
 	// data := [][]int{{1, 1, 0, 0, 0}, {1, 1, 1, 1, 0}, {1, 0, 0, 0, 0}, {1, 1, 0, 0, 0}, {1, 1, 1, 1, 1}}
 	// data := [][]int{{1, 2}, {2, 3}}
 
-	// data := [][]int{{1, 3}, {2, 3}, {3, 1}}
+	// data := [][]int{{1, 5, 9}, {10, 11, 13}, {12, 13, 15}}
 
 	// token := []int{2,1,3}
 	// token := []int{5, 4, 3, 8}
@@ -39,6 +39,7 @@ func main() {
 	// nums2 = [1,2,3], k = 2
 	// k := 2
 	// result := leetcode.KSmallestPairs(nums1, nums2, k)
-	result := leetcode.PivotInteger(1)
+	data := []int{1, 2, 3, 4}
+	result := leetcode.ProductExceptSelf(data)
 	fmt.Println(result)
 }
