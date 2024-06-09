@@ -1,24 +1,8 @@
 package leetcode
 
-import "math"
-
 func MaximumStrongPairXor(nums []int) int {
-	slideSize := 2
-	maxResult := 0
-	array := [][]int{}
-	for i := 0; i < len(nums)-slideSize; i++ {
-		pair := []int{}
-		array = append(array, []int{i, i})
-		for j := i; j < i+slideSize; j++ {
-			pair = append(pair, nums[j])
-		}
-		
-		if isStrongestPair(pair[0], pair[1]) {
-			maxResult = int(math.Max(float64(maxResult), float64(pair[0]^pair[1])))
 
-		}
-	}
-	return maxResult
+	return 0
 
 }
 
