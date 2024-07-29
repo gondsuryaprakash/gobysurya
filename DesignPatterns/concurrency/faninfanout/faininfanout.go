@@ -66,3 +66,15 @@ func (w *Worker) ProcessJob(data string, done chan *Worker) {
 func GetProcessor() *Processor {
 	return &Processor{}
 }
+
+func ChannelPractice() {
+	c := make(chan int)
+	// sending data to the channel
+	go func() {
+		c <- 1
+		time.Sleep(1 * time.Second)
+	}()
+	data := <-c
+	fmt.Println(data)
+
+}

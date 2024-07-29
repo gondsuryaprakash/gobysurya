@@ -18,3 +18,17 @@ func SelectionSort(arr []int) []int {
 	}
 	return arr
 }
+
+func seletionSort(arr []int) []int {
+	arrLength := len(arr)
+	for i := 0; i < len(arr); i++ {
+		min_index := i
+		for j := i + 1; j < arrLength; j++ {
+			if arr[j] < arr[min_index] {
+				min_index = j
+			}
+		}
+		Swap(arr, i, min_index)
+	}
+	return arr
+}
