@@ -31,9 +31,7 @@ func CreatePanicAndRecover(arr []string, index int) {
 	fmt.Println(arr[index])
 }
 
-func CreatePanicWithConcurrency(arr []string, index int){
-	
-
+func CreatePanicWithConcurrency(arr []string, index int) {
 
 }
 
@@ -53,4 +51,12 @@ func f2() {
 	defer fmt.Println("Defer in f2")
 	panic("Panic in f2")
 	fmt.Println("After Panic")
+}
+
+func recverCoding() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("reocver panic from the error")
+		}
+	}()
 }

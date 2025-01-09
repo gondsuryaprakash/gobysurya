@@ -11,6 +11,22 @@ func Adder() func(int) int {
 	}
 }
 
+func Adder1() func(int) int {
+	sum := 0
+	return func(i int) int {
+		sum += i
+		return sum
+	}
+}
+
+func CreateCountr() func(i int) int {
+	sum := 0
+	return func(i int) int {
+		sum += i
+		return sum
+	}
+}
+
 // return anonymous function for the closure
 func Incrementor() func() int {
 	i := 0

@@ -27,3 +27,13 @@ func UnMarshalJson() {
 
 	fmt.Println("Struct After UnMarshal :", person)
 }
+
+type Person1 struct {
+	Name string `json:"name"`
+	Class string `json:"class"`
+}
+
+func CallUnMarshal() {
+	
+}
+
